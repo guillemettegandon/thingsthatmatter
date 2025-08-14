@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Articles — What Matters To You</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Newsreader:opsz,wght@6..72,600;6..72,800&display=swap" rel="stylesheet">
+  <script type="module" src="shared.js"></script>
+</head>
+<body>
+  <div id="site-header"></div>
+  <main class="container">
+    <h1 class="serif">Articles</h1>
+    <div class="controls">
+      <input id="q" class="input" placeholder="Search by title, tag, or author">
+      <select id="category">
+        <option value="">All categories</option>
+        <option>Environment</option>
+        <option>Justice</option>
+        <option>Stories</option>
+        <option>Opinion</option>
+      </select>
+    </div>
+    <div class="grid" id="list"></div>
+  </main>
+  <div id="site-footer"></div>
+  <script type="module">
+    import { renderHeader, renderFooter } from './shared.js';
+    document.getElementById('site-header').innerHTML = renderHeader('articles');
+    document.getElementById('site-footer').innerHTML = renderFooter();
+
+    const params = new URLSearchParams(location.search);
+    const initialCategory = params.get('category') || '';
+
+    const res = await fetch('articles.json');
+    const articles = await res.json();
+    const list = document.getElementById('list');
+    const q = document.getElementById('q');
+    const cat = document.getElementById('category');
+    cat.value = initialCategory;
+
+    function render(items){
+      list.innerHTML='';
+      items.forEach(a=>{
+        const card = document.createElement('article');
+        card.className='card';
+        card.innerHTML = \`
+          <img src="\${a.hero}" alt="">
+          <div class="card-body">
+            <span class="badge">\${a.category}</span>
+            <h3 class="serif"><a href="article.html?id=\${a.id}">\${a.title}</a></h3>
+            <p>\${a.excerpt}</p>
+            <div class="byline">\${a.author} • \${new Date(a.date).toLocaleDateString()}</div>
+          </div>\`;
+        list.appendChild(card);
+      });
+    }
+
+    function filter(){
+      const term = q.value.toLowerCase();
+      const c = cat.value;
+      const filtered = articles.filter(a => {
+        const hay = (a.title + ' ' + a.excerpt + ' ' + a.author + ' ' + a.tags.join(' ')).toLowerCase();
+        return (!c || a.category === c) && (!term || hay.includes(term));
+      });
+      render(filtered);
+    }
+
+    q.addEventListener('input', filter);
+    cat.addEventListener('change', filter);
+    filter();
+  </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+[
+  {
+    "id": "reclaiming-rivers",
+    "title": "Reclaiming Rivers: Communities, Dams, and the Pulse of a Watershed",
+    "excerpt": "Grassroots groups are rewriting the story of their local rivers \u2014 one culvert and one conversation at a time.",
+    "author": "A. K. Sharma",
+    "date": "2025-08-01",
+    "category": "Environment",
+    "hero": "https://images.unsplash.com/photo-1504376379685-4dd5a0ec2d6b?q=80&w=1600&auto=format&fit=crop",
+    "content": "<p><strong>The river remembers.</strong></p><p>For decades, flood control meant concrete. Now, communities are testing a gentler approach: removing obsolete dams, restoring wetlands, and letting water breathe.</p><blockquote>\u201cWhen the salmon returned, so did the stories,\u201d a tribal elder told us.</blockquote><h2>What changed</h2><ul><li>Dam safety costs are rising.</li><li>Droughts and flash floods are more frequent.</li><li>Local coalitions are stronger than ever.</li></ul><h2>What matters</h2><p>We asked residents to map places they miss, fear, and love. The resulting atlas didn't just guide projects \u2014 it reframed power.</p>",
+    "tags": [
+      "rivers",
+      "restoration",
+      "communities"
+    ]
+  },
+  {
+    "id": "heat-at-night",
+    "title": "Heat at Night: Why Urban Cooling is an Equity Issue",
+    "excerpt": "Temperatures don't drop evenly after sunset. In some neighborhoods, the heat never lets go.",
+    "author": "Maya L\u00f3pez",
+    "date": "2025-07-18",
+    "category": "Justice",
+    "hero": "https://images.unsplash.com/photo-1561484930-998b6a7b23a0?q=80&w=1600&auto=format&fit=crop",
+    "content": "<p>Street trees, cool roofs, and renter protections: three levers that can save lives in the dark.</p><h2>Data we have</h2><p>City sensors show a <strong>5\u20138\u00b0C</strong> difference across districts. That gap maps onto redlining.</p><h2>Voices</h2><p>Night-shift workers, caregivers, and unhoused neighbors are living the heat map.</p>",
+    "tags": [
+      "heat",
+      "equity",
+      "cities"
+    ]
+  },
+  {
+    "id": "listening-to-farms",
+    "title": "Listening to Farms: Interviews from a Drier Future",
+    "excerpt": "Farmers are engineers of resilience \u2014 and reluctant futurists.",
+    "author": "Samir Patel",
+    "date": "2025-06-29",
+    "category": "Stories",
+    "hero": "https://images.unsplash.com/photo-1472145246862-b24cf25c4a36?q=80&w=1600&auto=format&fit=crop",
+    "content": "<p>From soil moisture hacks to cooperative wells, producers are designing locally-adapted climate tech.</p><blockquote>\u201cWe plan for the year we might get, not the year we want.\u201d</blockquote>",
+    "tags": [
+      "agriculture",
+      "interviews",
+      "drought"
+    ]
+  }
+]
